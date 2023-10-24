@@ -1,3 +1,4 @@
+import { IconChevronRight } from '@tabler/icons-react';
 export function Landing() {
   return (
     <header className="h-screen snap-start">
@@ -14,6 +15,7 @@ export function Landing() {
           className="w-[80%] text-lg py-4 rounded-md bg-lime-400 hover:bg-lime-300 transition-all"
         >
           Empezar
+          <IconChevronRight className="inline-block ml-0" />
         </a>
       </div>
     </header>

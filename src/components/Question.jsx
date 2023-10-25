@@ -31,7 +31,7 @@ export function Question({ pregunta, updateCorrectAnswers }) {
         {clicked && (
           <>
             {pregunta !== questions[questions.length - 1] ? (
-              <a
+              <button
                 onClick={() => swiper.slideNext()}
                 className="bg-lime-400 flex items-center justify-center w-[90%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 transition-all hover:cursor-pointer hover:scale-105 hover:bg-lime-300 opacity-100"
               >
@@ -39,11 +39,13 @@ export function Question({ pregunta, updateCorrectAnswers }) {
                   className="inline-block w-full ml-0"
                   size={30}
                 />
-              </a>
+              </button>
             ) : (
-              <a className="bg-lime-400 flex items-center justify-center w-[90%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 font-medium transition-all hover:cursor-pointer hover:scale-105 hover:bg-lime-300">
+              <button 
+              onClick={() => swiper.slideNext()}
+              className="bg-lime-400 flex items-center justify-center w-[90%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 font-medium transition-all hover:cursor-pointer hover:scale-105 hover:bg-lime-300">
                 Finalizar
-              </a>
+              </button>
             )}
           </>
         )}

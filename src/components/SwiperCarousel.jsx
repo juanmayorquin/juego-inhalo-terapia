@@ -17,6 +17,7 @@ export const SwiperCarousel = () => {
         clickable: false,
       }}
       modules={[Pagination]}
+      allowTouchMove={false}
     >
       {questions.map((pregunta, index) => (
         <SwiperSlide key={index}>

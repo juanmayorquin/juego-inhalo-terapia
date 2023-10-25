@@ -8,10 +8,10 @@ export const questions = [
             },
             {
                 img: "./img/level2/1.png",
-                text: "Retira la tapa y verifica que el orificio del aerosol esté limpio"
+                text: "Retira la tapa y verifica que el orificio del aerosol esté limpio",
+                isCorrect: true
             }
-        ],
-        correctAnswer: "Retira la tapa y verifica que el orificio del aerosol esté limpio"
+        ]
     },
     {
         question: "¿Cuál es el segundo paso para usar un inhalador?",
@@ -19,13 +19,13 @@ export const questions = [
             {
                 img: "./img/level2/1.png",
                 text: "Agítalo entre 10 y 30 segundos",
+                isCorrect: true
             },
             {
                 img: "./img/level2/1.png",
                 text: "No lo agites, altera el producto"
             }
         ],
-        correctAnswer: "Retira la tapa y verifica que el orificio del aerosol esté limpio"
     },
     {
         question: "¿Cuál es el tercer paso para usar un inhalador?",
@@ -36,11 +36,9 @@ export const questions = [
             },
             {
                 img: "./img/level2/1.png",
-                text: "Realiza una o dos descargas del contenido al aire antes de usarlo"
+                text: "Realiza una o dos descargas del contenido al aire antes de usarlo",
+                isCorrect: true
             }
         ],
-        correctAnswer: "Retira la tapa y verifica que el orificio del aerosol esté limpio"
     }    
 ]
-
-console.log(questions[0].choices[0].text)

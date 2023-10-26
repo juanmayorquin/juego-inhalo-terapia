@@ -33,7 +33,7 @@ export function Card({
       onClick={checkIfCorrect}
     >
       <img src={img} alt="card image" className="w-1/2" />
-      <p className="text-center text-lg mt-4">{text}</p>
+      <p className="text-center text-md md:text-xl mt-4">{text}</p>
     </div>
   );
 }

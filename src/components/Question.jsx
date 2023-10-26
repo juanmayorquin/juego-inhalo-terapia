@@ -6,9 +6,15 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { questions } from "../data/questions";
 
 export function Question({ pregunta, updateCorrectAnswers }) {
+  const [opacity, setOpacity] = useState("opacity-0");
+  const updateOpacity = () => {
+    setOpacity("opacity-100");
+  };
+
   const [clicked, setClicked] = useState(false);
   const updateClicked = () => {
     setClicked(true);
+    updateOpacity();
   };
   const swiper = useSwiper();
 
@@ -28,27 +34,25 @@ export function Question({ pregunta, updateCorrectAnswers }) {
             updateCorrectAnswers={updateCorrectAnswers}
           />
         ))}
-        {clicked && (
-          <>
-            {pregunta !== questions[questions.length - 1] ? (
-              <button
-                onClick={() => swiper.slideNext()}
-                className="bg-lime-400 flex items-center justify-center w-[90%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 transition-all hover:cursor-pointer hover:scale-105 hover:bg-lime-300 opacity-100"
-              >
-                <IconArrowRight
-                  className="inline-block w-full ml-0"
-                  size={30}
-                />
-              </button>
-            ) : (
-              <button 
-              onClick={() => swiper.slideNext()}
-              className="bg-lime-400 flex items-center justify-center w-[90%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 font-medium transition-all hover:cursor-pointer hover:scale-105 hover:bg-lime-300">
-                Finalizar
-              </button>
-            )}
-          </>
+
+        {pregunta !== questions[questions.length - 1] ? (
+          <button
+            onClick={() => swiper.slideNext()}
+            className={`bg-lime-400 flex items-center justify-center w-[90%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 transition-all hover:cursor-pointer hover:scale-105 hover:bg-lime-300 ${opacity}`}
+          >
+            <IconArrowRight
+              className="inline-block w-full ml-0"
+              size={30}
+            />
+          </button>
+        ) : (
+          <button
+            onClick={() => swiper.slideNext()}
+            className={`bg-lime-400 flex items-center justify-center w-[90%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 font-medium transition-all hover:cursor-pointer hover:scale-105 hover:bg-lime-300 ${opacity}`}>
+            Finalizar
+          </button>
         )}
+
       </div>
     </section>
   );

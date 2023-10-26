@@ -17,7 +17,7 @@ export function Landing() {
             Crisis Respiratorias
           </span>
         </h1>
-        <a onClick={handleScroll} className="w-[80%] md:w-auto md:px-10 text-lg py-4 rounded-md bg-lime-400 hover:bg-lime-300 hover:cursor-pointer hover:scale-105 transition-all">
+        <a onClick={handleScroll} className="w-[80%] md:w-auto md:px-10 text-lg py-4 rounded-md font-medium bg-lime-400 hover:bg-lime-300 hover:cursor-pointer hover:scale-105 transition-all">
           Empezar
           <IconChevronRight className="inline-block ml-0" />
         </a>

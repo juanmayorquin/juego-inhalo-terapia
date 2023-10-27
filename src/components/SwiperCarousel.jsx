@@ -42,8 +42,8 @@ export const SwiperCarousel = () => {
       <SwiperSlide>
         <div className="flex flex-col gap-3 justify-center items-center h-[90vh] my-auto py-10">
           {correctAnswers.length >= 1 && <Confetti />}
-          <h2 className="text-white text-xl text-center w-[90%]">
-            <br /> ¡Has acertado <span className="text-lime-400 font-semibold text-2xl">{correctAnswers.length}</span> de <span className="text-lime-400 font-semibold text-2xl">{questions.length}</span> preguntas!
+          <h2 className="text-xl text-center w-[90%]">
+            <br /> ¡Has acertado <span className="text-turquoise font-semibold text-2xl">{correctAnswers.length}</span> de <span className="text-turquoise font-semibold text-2xl">{questions.length}</span> preguntas!
           </h2>
           {correctAnswers.length != 0 && (<>
             <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:w-[90%]">
@@ -60,7 +60,7 @@ export const SwiperCarousel = () => {
           </>)}
           <button
             onClick={handleScroll}
-            className={`bg-lime-400 flex items-center justify-center w-[85%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 font-medium transition-all`}>
+            className={`bg-turquoise text-white flex items-center justify-center w-[85%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 font-medium transition-all`}>
             ¡Siguiente nivel!
           </button>
         </div>

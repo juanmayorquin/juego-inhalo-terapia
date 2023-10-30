@@ -35,6 +35,10 @@ export const useQuestion = (pregunta) => {
     setTimeUp(false);
     setTime(pregunta.time);
   };
+
+
+
+
   return {
     nextQuestion,
     updateClicked,

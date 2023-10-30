@@ -9,23 +9,40 @@ export function Level3() {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentQuestion = searchParams.get("question");
   const [correctAnswers, setCorrectAnswers] = useState([]);
-  
+
   const updateCorrectAnswers = (correctAnswer) => {
     setCorrectAnswers([...correctAnswers, correctAnswer]);
   };
-   const clearCorrectAnswers = () => {
+  const clearCorrectAnswers = () => {
     setCorrectAnswers([]);
   };
   useEffect(() => {
     const section = document.getElementById("level3");
     section.scrollIntoView({ behavior: "smooth" });
+
+    const handlePopstate = (event) => {
+      window.location.href = "/";
+      clearCorrectAnswers();
+    };
+
+    window.addEventListener("popstate", handlePopstate);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopstate);
+    };
   }, []);
 
   return (
     <section id="level3">
       {questions.map((question, index) => (
         <AnimatePresence key={question.question}>
-          {index === currentQuestion - 1 && <Question clearCorrectAnswers={clearCorrectAnswers} updateCorrectAnswers={updateCorrectAnswers} pregunta={question} />}
+          {index === currentQuestion - 1 && (
+            <Question
+              clearCorrectAnswers={clearCorrectAnswers}
+              updateCorrectAnswers={updateCorrectAnswers}
+              pregunta={question}
+            />
+          )}
         </AnimatePresence>
       ))}
       <AnimatePresence>

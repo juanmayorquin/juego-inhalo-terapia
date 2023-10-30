@@ -6,7 +6,6 @@ import { questions } from "../data/questions";
 import { motion } from "framer-motion";
 import { useQuestion } from "../hooks/useQuestion";
 import { NextButton } from "./NextButton";
-
 export function Question({
   pregunta,
   updateCorrectAnswers,
@@ -23,6 +22,8 @@ export function Question({
     opacity,
     setTime,
   } = useQuestion(pregunta);
+
+
 
   return (
     <motion.section

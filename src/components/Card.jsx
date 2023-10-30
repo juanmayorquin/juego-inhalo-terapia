@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export function Card({
   choice,
@@ -9,6 +10,7 @@ export function Card({
 }) {
   const [bgColor, setBgColor] = useState("bg-white");
   const { img, text } = choice;
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const checkIfCorrect = () => {
     if (!clicked) {
@@ -26,7 +28,9 @@ export function Card({
       }
     }
   };
-
+  useEffect(() => {
+    setBgColor("bg-white");
+  }, [searchParams.get("question")]);
   return (
     <div
       className={`rounded-lg p-8 flex flex-col items-center justify-center w-[85%] md:min-h-[30rem] drop-shadow-2xl md:hover:scale-[1.015] transition-all ${bgColor}`}

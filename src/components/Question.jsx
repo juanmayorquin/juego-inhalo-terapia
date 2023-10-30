@@ -25,7 +25,7 @@ export function Question({ pregunta, updateCorrectAnswers }) {
     setTimeUp(true);
     setClicked(true);
   }
-
+  
   const swiper = useSwiper();
 
   return (

@@ -27,6 +27,7 @@ export const questions = [
                 text: "No lo agites, altera el producto"
             }
         ],
+        time: 10
     },
     {
         question: "¿Cuál es el tercer paso para usar un inhalador?",

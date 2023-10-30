@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export function Timer ({ initialTime }) {
+export function Timer ({ initialTime, timeUp, updateTimeUp }) {
   const [time, setTime] = useState(initialTime);
 
   useEffect(() => {
@@ -12,6 +12,8 @@ export function Timer ({ initialTime }) {
   }, []);
 
   const progress = (time / initialTime) * 100;
+
+  progress <= 0 ? updateTimeUp() : null;
 
   return (
     <div className="absolute top-0 left-0 w-full h-4">

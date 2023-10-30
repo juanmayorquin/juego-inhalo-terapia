@@ -11,7 +11,8 @@ export const questions = [
                 text: "Retira la tapa y verifica que el orificio del aerosol esté limpio",
                 isCorrect: true
             }
-        ]
+        ],
+        time: 10
     },
     {
         question: "¿Cuál es el segundo paso para usar un inhalador?",

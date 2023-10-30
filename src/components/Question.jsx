@@ -2,6 +2,7 @@ import { Card } from "./Card";
 import { useState } from "react";
 import { useSwiper } from "swiper/react";
 import { Timer } from "./Timer";
+import { GameOver } from "./GameOver";
 
 import { IconArrowRight } from "@tabler/icons-react";
 import { questions } from "../data/questions";
@@ -18,11 +19,19 @@ export function Question({ pregunta, updateCorrectAnswers }) {
     setClicked(true);
     updateOpacity();
   };
+
+  const [timeUp, setTimeUp] = useState(false);
+  const updateTimeUp = () => {
+    setTimeUp(true);
+    setClicked(true);
+  }
+
   const swiper = useSwiper();
 
   return (
     <section className="relative h-screen mx-auto flex flex-col items-center justify-center snap-start ">
-      <Timer initialTime={10} />
+      {pregunta.time != null && <Timer initialTime={pregunta.time} timeUp={timeUp} updateTimeUp={updateTimeUp} />}
+      {timeUp && <GameOver />}
       <h2 className="text-xl text-center mb-5 w-[90%]">
         {pregunta.question}
       </h2>

@@ -1,4 +1,5 @@
 export function NextButton({ onClick, opacity, children }) {
+ 
     return (
       <button
         onClick={onClick}

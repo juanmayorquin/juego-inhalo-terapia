@@ -1,11 +1,11 @@
 import { useSearchParams } from "react-router-dom";
 import { Question } from "./components/Question";
 import { useEffect, useState } from "react";
-import { questions2 } from "./data/questions2";
+import { questions } from "./data/questions";
 import Confetti from "react-confetti";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function Level3() {
+export function Level2() {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentQuestion = searchParams.get("question");
   const [correctAnswers, setCorrectAnswers] = useState([]);
@@ -21,8 +21,8 @@ export function Level3() {
   }, []);
 
   return (
-    <section id="level3">
-      {questions2.map((question, index) => (
+    <section id="level2">
+      {questions[1].map((question, index) => (
         <AnimatePresence key={question.question}>
           {index === currentQuestion - 1 && (
             <Question
@@ -51,7 +51,7 @@ export function Level3() {
               </span>{" "}
               de{" "}
               <span className="text-turquoise font-semibold text-2xl">
-                {questions2.length}
+                {questions[1].length}
               </span>{" "}
               preguntas!
             </h2>
@@ -80,6 +80,7 @@ export function Level3() {
               </>
             )}
             <button
+            onClick={() => setSearchParams({ level: 3, question: 1 })}
               className={`bg-turquoise text-white flex items-center justify-center w-[85%] p-3 rounded-md md:absolute md:w-auto md:bottom-10 md:right-10 font-medium transition-all`}
             >
               ¡Siguiente nivel!

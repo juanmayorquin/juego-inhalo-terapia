@@ -5,7 +5,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useQuestion } from "../hooks/useQuestion";
 import { NextButton } from "./NextButton";
-
+import { questions } from "../data/questions";
 
 export function Question({
   pregunta,
@@ -24,9 +24,10 @@ export function Question({
     timeUp,
     opacity,
     setTime,
+    level
   } = useQuestion(pregunta);
 
-
+  const lastQuestionIndex = questions[level].length - 1;
 
   return (
     <motion.section
@@ -40,7 +41,7 @@ export function Question({
       className={` relative h-screen mx-auto flex flex-col items-center justify-center snap-start`}
     >
       {time && (
-        <Timer time={time} setTime={setTime} updateTimeUp={updateTimeUp} />
+        <Timer  clicked={clicked} time={time} setTime={setTime} updateTimeUp={updateTimeUp} />
       )}
 
       {timeUp && (
@@ -60,11 +61,12 @@ export function Question({
         ))}
 
         <NextButton onClick={clicked ? nextQuestion : null} opacity={opacity}>
-          {pregunta !== questions[questions.length - 1] ? (
+          {pregunta !== questions[level][lastQuestionIndex] ? (
             <IconArrowRight
               className="inline-block w-full ml-0"
               size={30}
               color="white"
+              id="hdohmdoip"
             />
           ) : (
             "Finalizar"

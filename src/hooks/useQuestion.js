@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
+import { questions } from "../data/questions";
 export const useQuestion = (pregunta) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [opacity, setOpacity] = useState("opacity-0");
@@ -8,14 +8,16 @@ export const useQuestion = (pregunta) => {
   const [time, setTime] = useState(pregunta.time);
   const [timeUp, setTimeUp] = useState(false);
   const currentQuestionIndex = searchParams.get("question") - 1;
-  
-  const level = searchParams.get("level");
+
+  const level = searchParams.get("level") - 1;
+
+  const lastQuestionIndex = questions[level].length - 1;
 
   const nextQuestion = () => {
-    if (pregunta !== questions[questions.length - 1]) {
-      setSearchParams({ level: level, question: currentQuestionIndex + 2 });
+    if (pregunta !== questions[level][lastQuestionIndex]) {
+      setSearchParams({ level: level + 1, question: currentQuestionIndex + 2 });
     } else {
-      setSearchParams({ level: level, question: "finished" });
+      setSearchParams({ level: level + 1, question: "finished" });
     }
     setClicked(false);
     setTime(pregunta.time);
@@ -37,9 +39,6 @@ export const useQuestion = (pregunta) => {
     setTime(pregunta.time);
   };
 
-
-
-
   return {
     nextQuestion,
     updateClicked,
@@ -50,5 +49,6 @@ export const useQuestion = (pregunta) => {
     timeUp,
     opacity,
     setTime,
+    level,
   };
 };

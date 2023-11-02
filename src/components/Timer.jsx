@@ -1,14 +1,16 @@
-import {useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
-export function Timer({ time, setTime, updateTimeUp }) {
-
+export function Timer({ time, setTime, updateTimeUp, clicked }) {
   useEffect(() => {
-      const interval = setInterval(() => {
-        setTime((prevTime) => prevTime - 0.1);
-      }, 100);
+    const interval = setInterval(() => {
+      setTime((prevTime) => prevTime - 0.1);
+    }, 100);
 
-      return () => clearInterval(interval);
-  }, []);
+    if (clicked) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [clicked,setTime]);
 
   useEffect(() => {
     if (time <= 0) {

@@ -5,7 +5,7 @@ export function Landing() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleStart = () => {
-    setSearchParams({ level: 3, question: 1 });
+    setSearchParams({ level: 2, question: 1 });
   };
   return (
     <header className="h-screen snap-start">

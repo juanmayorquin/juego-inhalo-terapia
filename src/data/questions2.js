@@ -1,4 +1,4 @@
-export const questions = [
+export const questions2 = [
     {
         question: "¿Cuál es el primer paso para usar un inhalador?",
         choices: [
@@ -11,8 +11,7 @@ export const questions = [
                 text: "Retira la tapa y verifica que el orificio del aerosol esté limpio",
                 isCorrect: true
             }
-        ],
-        time: 10
+        ]
     },
     {
         question: "¿Cuál es el segundo paso para usar un inhalador?",
@@ -26,8 +25,7 @@ export const questions = [
                 img: "./img/level2/1.png",
                 text: "No lo agites, altera el producto"
             }
-        ],
-        time: 10
+        ]
     },
     {
         question: "¿Cuál es el tercer paso para usar un inhalador?",
@@ -41,6 +39,6 @@ export const questions = [
                 text: "Realiza una o dos descargas del contenido al aire antes de usarlo",
                 isCorrect: true
             }
-        ],
+        ]
     }    
 ]

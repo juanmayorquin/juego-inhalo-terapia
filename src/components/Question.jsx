@@ -2,15 +2,18 @@ import { Card } from "./Card";
 import { Timer } from "./Timer";
 import { GameOver } from "./GameOver";
 import { IconArrowRight } from "@tabler/icons-react";
-import { questions } from "../data/questions";
 import { motion } from "framer-motion";
 import { useQuestion } from "../hooks/useQuestion";
 import { NextButton } from "./NextButton";
+
+
 export function Question({
   pregunta,
   updateCorrectAnswers,
   clearCorrectAnswers,
 }) {
+  
+
   const {
     nextQuestion,
     updateClicked,

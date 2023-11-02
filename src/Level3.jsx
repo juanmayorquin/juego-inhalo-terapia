@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { Question } from "./components/Question";
 import { useEffect, useState } from "react";
-import { questions } from "./data/questions";
+import { questions3 } from "./data/questions3";
 import Confetti from "react-confetti";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -34,7 +34,7 @@ export function Level3() {
 
   return (
     <section id="level3">
-      {questions.map((question, index) => (
+      {questions3.map((question, index) => (
         <AnimatePresence key={question.question}>
           {index === currentQuestion - 1 && (
             <Question
@@ -63,7 +63,7 @@ export function Level3() {
               </span>{" "}
               de{" "}
               <span className="text-turquoise font-semibold text-2xl">
-                {questions.length}
+                {questions3.length}
               </span>{" "}
               preguntas!
             </h2>

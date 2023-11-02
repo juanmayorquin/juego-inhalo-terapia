@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { questions } from "../data/questions";
 
 export const useQuestion = (pregunta) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -9,12 +8,14 @@ export const useQuestion = (pregunta) => {
   const [time, setTime] = useState(pregunta.time);
   const [timeUp, setTimeUp] = useState(false);
   const currentQuestionIndex = searchParams.get("question") - 1;
+  
+  const level = searchParams.get("level");
 
   const nextQuestion = () => {
     if (pregunta !== questions[questions.length - 1]) {
-      setSearchParams({ level: 3, question: currentQuestionIndex + 2 });
+      setSearchParams({ level: level, question: currentQuestionIndex + 2 });
     } else {
-      setSearchParams({ level: 3, question: "finished" });
+      setSearchParams({ level: level, question: "finished" });
     }
     setClicked(false);
     setTime(pregunta.time);

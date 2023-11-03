@@ -1,5 +1,12 @@
 export const questions = [
-  [],
+  {
+    dustbins: [
+      { name: "pipa",img:"", currentItem: null },
+      { name: "Inhalocamara",img:"", currentItem: null },
+      { name: "Cartucho",img:"", currentItem: null },
+    ],
+    items: ["Cartucho", "Inhalocamara", "pipa"],
+  },
   [
     {
       question: "¿Cuál es el primer paso para usar un inhalador?",
@@ -55,7 +62,7 @@ export const questions = [
         {
           img: "./img/level2/1.png",
           text: "Sentarme erguido y trata de permanecer en calma",
-          isCorrect: true
+          isCorrect: true,
         },
       ],
       time: 10,
@@ -67,7 +74,7 @@ export const questions = [
         {
           img: "./img/level2/1.png",
           text: "Tomar una inhalación de un analgésico o un inhalador de rescate de 30 a 60 segundos con un máximo de 10 inhalaciones",
-          isCorrect: true
+          isCorrect: true,
         },
         {
           img: "./img/level2/1.png",
@@ -83,7 +90,7 @@ export const questions = [
         {
           img: "./img/level2/1.png",
           text: "Buscar atención médica de emergencia",
-          isCorrect: true
+          isCorrect: true,
         },
         {
           img: "./img/level2/1.png",

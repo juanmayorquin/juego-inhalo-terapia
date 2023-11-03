@@ -132,7 +132,7 @@ export function Level1() {
         </div>
       </section>
 
-      {levelFinished && (
+      {levelFinished && questions[0].items.length === itemsInDustbins.length && (
         <section
           id="correctAnswersLevel1"
           className="h-screen snap-start flex flex-col"

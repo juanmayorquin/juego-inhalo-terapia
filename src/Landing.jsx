@@ -44,7 +44,7 @@ export function Landing() {
           </div>
           <div>
             <h3>
-              Prácitca profesional III: Infancia y adolescencia
+              Práctica profesional III: Infancia y adolescencia
             </h3>
             <p>Programa de Fisioterapia</p>
             <p>2023B</p>

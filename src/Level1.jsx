@@ -105,7 +105,7 @@ export function Level1() {
     <>
       <section id="level1" className="h-screen snap-start flex flex-col justify-center">
         <div className="">
-          <div className="flex flex-col items-center justify-center mx-4 font-semibold text-center text-indigo-500 text-xl">
+          <div className="flex flex-col items-center justify-center mx-4 font-medium text-center text-xl">
             <h2 className="mb-4">Arrastra el nombre a cada figura!</h2>
           </div>
           <div className="flex flex-shrink-0 p-5 gap-5 snap-x snap-mandatory overflow-x-auto">

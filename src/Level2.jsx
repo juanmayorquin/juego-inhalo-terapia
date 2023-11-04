@@ -18,6 +18,17 @@ export function Level2() {
   useEffect(() => {
     const section = document.getElementById("level2");
     section.scrollIntoView({ behavior: "smooth" });
+
+    const handlePopstate = (event) => {
+      window.location.href = "/";
+      clearCorrectAnswers();
+    };
+
+    window.addEventListener("popstate", handlePopstate);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopstate);
+    };
   }, []);
 
   return (

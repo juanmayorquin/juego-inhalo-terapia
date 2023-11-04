@@ -11,17 +11,12 @@ export function Landing() {
   };
   return (
     <header className="h-screen snap-start">
-      <div className="h-full flex flex-col gap-20 justify-center items-center text-center max-w-[50rem] m-auto relative">
-        <div className="grid grid-cols-2 gap-5 absolute top-16 w-1/2 md:w-1/3">
+      <div className="h-full flex flex-col gap-10 justify-center items-center text-center max-w-[50rem] m-auto relative">
+        <div className="flex items-center justify-center">
           <img
-            className="object-contain w-full"
+            className="object-contain w-28"
             src="./img/landing/pulmones.png"
             alt="Pulmones"
-          />
-          <img
-            className="object-contain w-full"
-            src="./img/landing/logo.png"
-            alt="Logo"
           />
         </div>
         <h1 className="w-[90%] text-3xl text-black">
@@ -39,6 +34,22 @@ export function Landing() {
           Empezar
           <IconChevronRight className="inline-block ml-0" />
         </button>
+        <div className="font-medium w-[90%] flex flex-col gap-3">
+          <div className="flex items-center justify-center">
+            <img
+              className="object-contain w-28"
+              src="./img/landing/logo.png"
+              alt="Pulmones"
+            />
+          </div>
+          <div>
+            <h3>
+              Prácitca profesional III: Infancia y adolescencia
+            </h3>
+            <p>Programa de Fisioterapia</p>
+            <p>2023B</p>
+          </div>
+        </div>
       </div>
     </header>
   );

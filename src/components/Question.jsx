@@ -47,8 +47,8 @@ export function Question({
       {timeUp && (
         <GameOver clearCorrectAnswers={clearCorrectAnswers} reset={reset} />
       )}
-      <h2 className="text-xl text-center mb-5 w-[90%]">{pregunta.question}</h2>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-5 h-2/3 md:max-w-[90%]">
+      <h3 className="text-lg text-center mb-16 w-[90%]">{pregunta.question}</h3>
+      <div className="flex flex-col flex-shrink-0 overflow-y-auto md:flex-row justify-center items-center gap-5 h-2/3 md:max-w-[90%]">
         {pregunta.choices.map((choice, index) => (
           <Card
             key={index}

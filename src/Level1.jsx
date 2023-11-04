@@ -165,7 +165,7 @@ export function Level1() {
               </div>
             ))}
           </div>
-          <button className="bg-turquoise px-5 py-3 rounded-md font-medium text-white mb-5" onClick={() => setSearchParams({ level: 2, question: 1 })}>
+          <button className="bg-turquoise px-5 py-3 mb-20 rounded-md font-medium text-white" onClick={() => setSearchParams({ level: 2, question: 1 })}>
             Siguiente nivel
           </button>
         </section>

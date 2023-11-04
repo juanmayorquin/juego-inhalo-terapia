@@ -5,6 +5,7 @@ import { questions } from "./data/questions";
 import { useSearchParams } from "react-router-dom";
 
 import update from "immutability-helper";
+import Confetti from "react-confetti";
 
 export function Level1() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -102,61 +103,70 @@ export function Level1() {
 
   return (
     <>
-      <section id="level1" className="h-screen snap-start">
-        <div className="flex p-5 gap-8 overflow-x-auto">
-          {dustbins.map(({ currentItem, name, img }, index) => (
-            <Dustbin
-              key={index}
-              name={name}
-              img={img}
-              currentItem={currentItem}
-              onDelete={() => handleDelete(index)}
-              onAssign={() => handleAssignItem(index, selectedItem)}
-            />
-          ))}
-        </div>
-        {questions[0].items.length === itemsInDustbins.length && (
-          <div className="flex justify-center">
-            <button onClick={handleVerify}>Verificar</button>
+      <section id="level1" className="h-screen snap-start flex flex-col justify-center">
+        <div className="">
+          <div className="flex flex-col items-center justify-center mx-4 font-semibold text-center text-indigo-500 text-xl">
+            <h2 className="mb-4">Arrastra el nombre a cada figura!</h2>
           </div>
-        )}
-        <div className="w-full flex overflow-x-auto gap-2 p-5">
-          {itemsOutDustbins.map((name, index) => (
-            <Item
-              name={name}
-              selectedItem={selectedItem}
-              selectItem={selectItem}
-              key={index}
-            />
-          ))}
+          <div className="flex flex-shrink-0 p-5 gap-5 snap-x snap-mandatory overflow-x-auto">
+            {dustbins.map(({ currentItem, name, img }, index) => (
+              <Dustbin
+                key={index}
+                name={name}
+                img={img}
+                currentItem={currentItem}
+                onDelete={() => handleDelete(index)}
+                onAssign={() => handleAssignItem(index, selectedItem)}
+              />
+            ))}
+          </div>
+          {questions[0].items.length === itemsInDustbins.length && (
+            <div className="flex justify-center">
+              <button className="bg-turquoise px-5 py-3 rounded-md font-medium text-white" onClick={handleVerify}>Verificar</button>
+            </div>
+          )}
+          <div className="w-full flex overflow-x-auto gap-2 p-5">
+            {itemsOutDustbins.map((name, index) => (
+              <Item
+                name={name}
+                selectedItem={selectedItem}
+                selectItem={selectItem}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
       {levelFinished && questions[0].items.length === itemsInDustbins.length && (
         <section
           id="correctAnswersLevel1"
-          className="h-screen snap-start flex flex-col"
+          className="h-screen snap-start flex flex-col justify-center items-center gap-5"
         >
-          {correctDustbins.map((dustbin, index) => (
-            <div
-              key={index}
-              className="rounded-lg  md:flex-shrink flex-shrink-0 p-8 bg-white flex flex-col items-center justify-center w-1/2  z-10 drop-shadow-2xl md:hover:scale-[1.015] transition-all"
-            >
-              <div>image</div>
-              <div className="w-full">
-                <div
-                  className="w-full h-9 text-white rounded-md bg-gray-500 relative  mx-auto flex items-center justify-center"
-                  data-testid="dustbin"
-                >
-                  <p className=" font-medium z-40 flex rounded-md items-center justify-center bg-green-500 w-full h-full text-lg ">
-                    {dustbin.currentItem}
-                  </p>
+          {correctDustbins.length >= 1 && <Confetti/>}
+          <h2 className="font-medium text-lg pt-5">Tienes <span className="text-turquoise text-xl">{correctDustbins.length}</span> respuestas correctas!</h2>
+          <div className="overflow-y-auto flex flex-col gap-5 items-center">
+            {correctDustbins.map((dustbin, index) => (
+              <div
+                key={index}
+                className="rounded-lg md:flex-shrink flex-shrink-0 p-5 w-[80%] bg-white flex flex-col items-center justify-center z-10 transition-all"
+              >
+                <img className="w-1/2 mb-5" src={dustbin.img} alt="" />
+                <div className="w-full">
+                  <div
+                    className="w-full h-9 text-white rounded-md bg-gray-500 relative  mx-auto flex items-center justify-center"
+                    data-testid="dustbin"
+                  >
+                    <p className=" font-medium z-40 flex rounded-md items-center justify-center bg-green-300 w-full h-full text-lg ">
+                      {dustbin.currentItem}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-          <button onClick={() => setSearchParams({ level: 2, question: 1 })}>
-            Siguiente Nivel !
+            ))}
+          </div>
+          <button className="bg-turquoise px-5 py-3 rounded-md font-medium text-white mb-5" onClick={() => setSearchParams({ level: 2, question: 1 })}>
+            Siguiente nivel
           </button>
         </section>
       )}

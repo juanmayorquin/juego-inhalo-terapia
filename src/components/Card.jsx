@@ -36,7 +36,7 @@ export function Card({
       className={`rounded-lg p-8 flex flex-col items-center justify-center w-[85%] md:min-h-[30rem] drop-shadow-2xl md:hover:scale-[1.015] transition-all ${bgColor}`}
       onClick={checkIfCorrect}
     >
-      <img src={img} alt="card image" className="w-1/4" />
+      <img src={img} alt="card image" className="w-1/3" />
       <p className="text-center text-md md:text-xl mt-4">{text}</p>
     </div>
   );

@@ -26,7 +26,7 @@ export function Landing() {
         </div>
         <h1 className="w-[90%] text-3xl text-black">
           Aprendamos jugando sobre{" "}
-          <span className="font-semibold text-ruddy_blue">Inhalo Terapia</span>{" "}
+          <span className="font-semibold text-indigo-500">Inhalo Terapia</span>{" "}
           y{" "}
           <span className="font-semibold text-plum_(web)">
             Crisis Respiratorias

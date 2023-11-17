@@ -45,11 +45,11 @@ export const questions = [
         {
           img: "./img/level2/q3_1.png",
           text: "Úsalo directamente en la boca",
+          isCorrect: true,
         },
         {
           img: "./img/level2/q3_2.png",
-          text: "Realiza una o dos descargas del contenido al aire antes de usarlo",
-          isCorrect: true,
+          text: "Mete el inhalador en agua fría",
         },
       ],
     },
@@ -76,7 +76,7 @@ export const questions = [
       choices: [
         {
           img: "./img/level3/q2_1.png",
-          text: "Tomar una inhalación de un analgésico o un inhalador de rescate de 30 a 60 segundos con un máximo de 10 inhalaciones",
+          text: "Tomar una inhalación de un inhalador de rescate de 30 a 60 segundos con un máximo de 10 inhalaciones",
           isCorrect: true,
         },
         {
